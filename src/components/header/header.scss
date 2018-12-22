@@ -1,0 +1,16 @@
+.headerNav {
+  ul {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    li {
+      width: 33.333%;
+      height: 20px;
+      background: gray;
+      &.active {
+        background: #ccc;
+      }
+    }
+  }
+}
