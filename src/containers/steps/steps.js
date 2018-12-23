@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import Header from '../../components/header'
-import Pagination from '../../components/pagination'
 import StepOne from './stepOne'
 import StepTwo from './stepTwo'
 import StepThree from './stepThree'
@@ -55,7 +54,7 @@ class Steps extends Component {
     const { page } = this.state
     return (
       <div>
-        <Header />
+        <Header activeId={page} />
         {page === 1 && (
           <StepOne
             onBack={this.prevPage}
@@ -73,6 +72,11 @@ class Steps extends Component {
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
+        )}
+        {page === 4 && (
+          <div>
+            Thank you! You are done!
+          </div>
         )}
       </div>
     )
