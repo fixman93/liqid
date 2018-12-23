@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 import Header from '../../components/header'
 import StepOne from './stepOne'
@@ -7,10 +6,6 @@ import StepTwo from './stepTwo'
 import StepThree from './stepThree'
 
 class Steps extends Component {
-  static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    onBack: PropTypes.func.isRequired
-  }
 
   constructor(props) {
     super(props)

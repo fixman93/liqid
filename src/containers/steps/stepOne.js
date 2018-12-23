@@ -35,7 +35,7 @@ class stepOne extends Component {
             <input type="text" placeholder="Your age" name="age" onChange={this.handleChange} />
           </div>
           <button onClick={() => onBack()}>Prev</button>
-          <button type='submit'>Next</button>
+          <button type='submit' disabled={!this.state.age}>Next</button>
         </form>
       </div>
     )

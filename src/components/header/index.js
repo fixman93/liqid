@@ -6,7 +6,6 @@ import './header.scss'
 class Header extends Component {
 
   static propTypes = {
-    match: PropTypes.object.isRequired,
     activeId: PropTypes.number.isRequired
   }
 

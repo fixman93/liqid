@@ -43,7 +43,7 @@ class stepThree extends Component {
             <input type='radio' value='blue' name='color' onChange={this.handleChange} />
           </div>
           <button onClick={() => onBack()}>Prev</button>
-          <button type='submit'>Preview</button>
+          <button type='submit' disabled={!this.state.color}>Preview</button>
         </form>
       </div>
     )

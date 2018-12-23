@@ -5,7 +5,7 @@ class stepTwo extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      status: 'i'
+      status: ''
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -39,7 +39,7 @@ class stepTwo extends Component {
             </select>
           </div>
           <button onClick={() => onBack()}>Prev</button>
-          <button type='submit'>Next</button>
+          <button type='submit' disabled={!this.state.status}>Next</button>
         </form>
       </div>
     )
