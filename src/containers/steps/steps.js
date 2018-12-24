@@ -6,6 +6,8 @@ import StepOne from './stepOne'
 import StepTwo from './stepTwo'
 import StepThree from './stepThree'
 
+import './steps.scss'
+
 class Steps extends Component {
 
   componentWillMount() {
@@ -78,8 +80,8 @@ class Steps extends Component {
           />
         )}
         {page === 4 && (
-          <div className='finished'>
-            3/3 question
+          <div className='container finished'>
+            3/3 questions
             <Link to='/preview'>Go to preview page</Link>
           </div>
         )}

@@ -4,17 +4,33 @@
     list-style: none;
     width: 100%;
     display: flex;
+    transition: all .4s;
+    @media (max-width: 480px) {
+      flex-flow: wrap;
+    }
     li {
       width: 33.333%;
-      height: 20px;
-      background: gray;
+      background: #5a819e;
+      color: #fef8ad;
+      text-align: center;
+      font-size: 23px;
+      font-weight: bold;
+      padding: 15px 15px;
+      border-right: 1px solid white;
+      line-height: 20px;
+      transition: all .4s;
       &.active {
-        background: #ccc;
+        background: #ec743b;
+      }
+      @media (max-width: 480px) {
+        width: 100%;
+        border-bottom: 1px solid white;
+        border-right: 0;
       }
     }
     &.active {
       li {
-        background: #ccc;
+        background: #ec743b;
       }
     }
   }

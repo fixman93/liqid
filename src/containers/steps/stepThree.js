@@ -32,7 +32,7 @@ class stepThree extends Component {
   render() {
     const { onBack } = this.props
     return (
-      <div>
+      <div className='container question'>
         <h3>Your favorite color:</h3>
         <form
           onSubmit={async e => {
@@ -40,17 +40,17 @@ class stepThree extends Component {
             await this.handleSubmit()
 
           }}>
-          <div className='form-group'>
-            <label>Red</label>
-            <input type='radio' value='red' name='color' onChange={this.handleChange} />
+          <div className='form-group radio-btn'>
+            <label htmlFor='1'>Red</label>
+            <input type='radio' value='red' id='1' name='color' onChange={this.handleChange} />
           </div>
-          <div className='form-group'>
-            <label>Black</label>
-            <input type='radio' value='black' name='color' onChange={this.handleChange} />
+          <div className='form-group radio-btn'>
+            <label htmlFor='2'>Black</label>
+            <input type='radio' value='black' id='2' name='color' onChange={this.handleChange} />
           </div>
-          <div className='form-group'>
-            <label>Blue</label>
-            <input type='radio' value='blue' name='color' onChange={this.handleChange} />
+          <div className='form-group radio-btn'>
+            <label htmlFor='3'>Blue</label>
+            <input type='radio' value='blue' id='3' name='color' onChange={this.handleChange} />
           </div>
           <button onClick={() => onBack()}>Prev</button>
           <button type='submit' disabled={!this.state.color}>Preview</button>

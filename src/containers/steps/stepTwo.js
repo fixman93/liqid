@@ -31,7 +31,7 @@ class stepTwo extends Component {
   render() {
     const { onBack } = this.props
     return (
-      <div>
+      <div className='container question'>
         <h3>Your status:</h3>
         <form
           onSubmit={async e => {
@@ -40,7 +40,6 @@ class stepTwo extends Component {
 
           }}>
           <div className='form-group'>
-            <label>Status</label>
             <select name="status" onChange={this.handleChange} value={this.state.status}>
               <option></option>
               <option value='Single'>Single</option>
