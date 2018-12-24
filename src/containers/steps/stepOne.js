@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import { setInput, setError } from '../../common/helpers';
 
 class stepOne extends Component {
 
+  componentWillMount() {
+    this.setState({ age: localStorage.getItem('quizInfo') })
+  }
   constructor(props) {
     super(props)
     this.state = {
-      age: ''
+      age: '',
+      question: ''
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -14,8 +19,11 @@ class stepOne extends Component {
     this.setState({ [evt.target.name]: evt.target.value })
   }
 
-  handleSubmit = () => {
-    this.props.onSubmit(this.state.age)
+  handleSubmit = async () => {
+    // this.props.onSubmit(this.state.age)
+    setInput(this, "interviewStagesID", 'test Value')
+    await this.props.onSubmit(Object.assign({},
+      await this.state.input, { age: this.state.age }));
     // when we want to take form with all fields we can do that with Object.assing()
     //this.props.onSubmit(Object.assign({}, this.state.age));
   }
@@ -32,7 +40,7 @@ class stepOne extends Component {
           }}>
           <div className='form-group'>
             <label>Age</label>
-            <input type="text" placeholder="Your age" name="age" onChange={this.handleChange} />
+            <input type="text" placeholder="Your age" name="age" onChange={this.handleChange} value={this.state.age} />
           </div>
           <button onClick={() => onBack()}>Prev</button>
           <button type='submit' disabled={!this.state.age}>Next</button>

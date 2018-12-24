@@ -7,6 +7,7 @@ import StepThree from './stepThree'
 
 class Steps extends Component {
 
+
   constructor(props) {
     super(props)
     this.state = {
@@ -38,38 +39,43 @@ class Steps extends Component {
     console.log(data)
     this.setState(prevState => ({
       input: {
+        ...prevState.input,
         ...data
       }
-    }
-    ))
+    }))
+    console.log('sadsada', this.state.input)
+    localStorage.setItem('quizInfo', data)
     this.nextPage()
   }
 
   render() {
-    const { page } = this.state
+    const { page, input } = this.state
     return (
       <div>
         <Header activeId={page} />
         {page === 1 && (
           <StepOne
+            propsData={input}
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
         )}
         {page === 2 && (
           <StepTwo
+            propsData={input}
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
         )}
         {page === 3 && (
           <StepThree
+            propsData={input}
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
         )}
         {page === 4 && (
-          <div>
+          <div className='previewPage'>
             Thank you! You are done!
           </div>
         )}

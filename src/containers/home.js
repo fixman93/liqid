@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Pagination from '../components/pagination'
 
+import './home.scss'
 
 class Home extends Component {
   render() {
     return (
-      <div>
-
-        <Link to='step-1'>step-1</Link>
-        <Pagination />
+      <div className='home'>
+        <Link to='steps'>Start your first quiz</Link>
       </div>
     )
   }
