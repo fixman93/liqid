@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { setInput } from '../../common/helpers';
-
 
 class stepTwo extends Component {
 
@@ -27,12 +25,8 @@ class stepTwo extends Component {
   }
 
   handleSubmit = async () => {
-    // this.props.onSubmit(this.state.status)
-    setInput(this, "interviewStagesID", 'test Value')
     await this.props.onSubmit(Object.assign({},
       await this.state.input, { status: this.state.status }));
-    // when we want to take form with all fields we can do that with Object.assing()
-    //this.props.onSubmit(Object.assign({}, this.state.age));
   }
   render() {
     const { onBack } = this.props

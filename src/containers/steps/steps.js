@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import Header from '../../components/header'
 import StepOne from './stepOne'
@@ -30,7 +31,6 @@ class Steps extends Component {
         page: prevState.page - 1
       }))
       localStorage.setItem('page', JSON.stringify(this.state.page));
-      console.log('minus jedan', this.state.page)
     }
   }
 
@@ -40,19 +40,16 @@ class Steps extends Component {
         page: prevState.page + 1
       }))
       localStorage.setItem('page', JSON.stringify(this.state.page));
-      console.log('plus jedan', this.state.page)
     }
   }
 
   handleStep = (data) => {
-    console.log(data)
     this.setState(prevState => ({
       input: {
         ...prevState.input,
         ...data
       }
     }))
-    console.log('sadsada', this.state.input)
     localStorage.setItem('quizInfo', JSON.stringify(this.state.input))
     this.nextPage()
   }
@@ -79,6 +76,12 @@ class Steps extends Component {
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
+        )}
+        {page === 4 && (
+          <div className='finished'>
+            3/3 question
+            <Link to='/preview'>Go to preview page</Link>
+          </div>
         )}
       </div>
     )
