@@ -4,6 +4,16 @@ import { setInput, setError } from '../../common/helpers';
 
 class stepThree extends Component {
 
+  componentWillMount() {
+    let quizInfo = JSON.parse(localStorage.getItem('quizInfo'))
+    if (quizInfo === null) {
+      quizInfo = {}
+    }
+    else {
+      this.setState({ color: quizInfo.color })
+    }
+  }
+
   constructor(props) {
     super(props)
     this.state = {

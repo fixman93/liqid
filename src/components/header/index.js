@@ -16,7 +16,7 @@ class Header extends Component {
     const { activeId } = this.props
     return (
       <div className='headerNav'>
-        <ul>
+        <ul className={activeId === 4 ? 'active' : ''}>
           <li className={activeId === 1 ? 'active' : ''}></li>
           <li className={activeId === 2 ? 'active' : ''}></li>
           <li className={activeId === 3 ? 'active' : ''}></li>

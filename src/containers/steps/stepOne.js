@@ -4,8 +4,15 @@ import { setInput, setError } from '../../common/helpers';
 class stepOne extends Component {
 
   componentWillMount() {
-    this.setState({ age: localStorage.getItem('quizInfo') })
+    let quizInfo = JSON.parse(localStorage.getItem('quizInfo'))
+    if (quizInfo === null) {
+      quizInfo = {}
+    }
+    else {
+      this.setState({ age: quizInfo.age })
+    }
   }
+
   constructor(props) {
     super(props)
     this.state = {

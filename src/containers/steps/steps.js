@@ -7,6 +7,15 @@ import StepThree from './stepThree'
 
 class Steps extends Component {
 
+  componentWillMount() {
+    let quizInfo = JSON.parse(localStorage.getItem('quizInfo'))
+    if (quizInfo === null) {
+      quizInfo = {}
+    }
+    else {
+      this.setState({ input: quizInfo })
+    }
+  }
 
   constructor(props) {
     super(props)
@@ -44,7 +53,7 @@ class Steps extends Component {
       }
     }))
     console.log('sadsada', this.state.input)
-    localStorage.setItem('quizInfo', data)
+    localStorage.setItem('quizInfo', JSON.stringify(this.state.input))
     this.nextPage()
   }
 
@@ -55,29 +64,21 @@ class Steps extends Component {
         <Header activeId={page} />
         {page === 1 && (
           <StepOne
-            propsData={input}
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
         )}
         {page === 2 && (
           <StepTwo
-            propsData={input}
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
         )}
         {page === 3 && (
           <StepThree
-            propsData={input}
             onBack={this.prevPage}
             onSubmit={this.handleStep}
           />
-        )}
-        {page === 4 && (
-          <div className='previewPage'>
-            Thank you! You are done!
-          </div>
         )}
       </div>
     )
