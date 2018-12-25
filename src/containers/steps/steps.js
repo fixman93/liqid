@@ -57,7 +57,7 @@ class Steps extends Component {
   }
 
   render() {
-    const { page, input } = this.state
+    const { page } = this.state
     return (
       <div>
         <Header activeId={page} />

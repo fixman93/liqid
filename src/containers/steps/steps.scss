@@ -39,6 +39,10 @@
     font-weight: bold;
     color: #5a819e;
     cursor: pointer;
+    &.disabled {
+      color: #ccc;
+      border-color: #ccc;
+    }
   }
 }
 .finished {

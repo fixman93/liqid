@@ -30,7 +30,6 @@ class stepOne extends Component {
       await this.state.input, { age: this.state.age }));
   }
   render() {
-    const { onBack } = this.props
     return (
       <div className='container question'>
         <h3>Your age:</h3>
@@ -43,8 +42,7 @@ class stepOne extends Component {
           <div className='form-group'>
             <input type="text" placeholder="Your age" name="age" onChange={this.handleChange} value={this.state.age} />
           </div>
-          <button onClick={() => onBack()}>Prev</button>
-          <button type='submit' disabled={!this.state.age}>Next</button>
+          <button type='submit' disabled={!this.state.age} className={!this.state.age ? 'disabled' : ''}>Next</button>
         </form>
       </div>
     )

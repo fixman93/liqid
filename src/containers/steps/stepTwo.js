@@ -47,7 +47,7 @@ class stepTwo extends Component {
             </select>
           </div>
           <button onClick={() => onBack()}>Prev</button>
-          <button type='submit' disabled={!this.state.status}>Next</button>
+          <button type='submit' disabled={!this.state.status} className={!this.state.status ? 'disabled' : ''}>Next</button>
         </form>
       </div>
     )
