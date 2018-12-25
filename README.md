@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Author:
+
+# Boris Civcic (civcic.com)
+# civcicboris93@gmail.com
+
+## Description:
+
+I tried to create all tasks from PDF document. We have containers with pages, components like 'Header', and common folder with 'forms --> inputs and buttons'.
+We have ES6 standard ( functions, async --> await, const/let). I know we have a lot of, but I used some examples what I needed to create this project.
+
 ## Available Scripts
 
 In the project directory, you can run:
