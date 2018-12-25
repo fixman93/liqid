@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Button from '../../common/forms/Button/index'
+
 
 class stepTwo extends Component {
 
@@ -46,8 +48,17 @@ class stepTwo extends Component {
               <option value='Married'>Married</option>
             </select>
           </div>
-          <button onClick={() => onBack()}>Prev</button>
-          <button type='submit' disabled={!this.state.status} className={!this.state.status ? 'disabled' : ''}>Next</button>
+          <Button
+            text='Prev'
+            type='submit'
+            click={() => onBack()}
+          />
+          <Button
+            className={!this.state.status ? 'disabled' : ''}
+            text='Next'
+            type='submit'
+            disabled={!this.state.status}
+          />
         </form>
       </div>
     )

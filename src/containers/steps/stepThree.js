@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import Button from '../../common/forms/Button/index'
+import Input from '../../common/forms/Input/index'
 
 class stepThree extends Component {
 
@@ -42,18 +43,27 @@ class stepThree extends Component {
           }}>
           <div className='form-group radio-btn'>
             <label htmlFor='1'>Red</label>
-            <input type='radio' value='red' id='1' name='color' onChange={this.handleChange} />
+            <Input type='radio' name='color' change={this.handleChange} value='red' id='1' />
           </div>
           <div className='form-group radio-btn'>
             <label htmlFor='2'>Black</label>
-            <input type='radio' value='black' id='2' name='color' onChange={this.handleChange} />
+            <Input type='radio' name='color' change={this.handleChange} value='black' id='2' />
           </div>
           <div className='form-group radio-btn'>
             <label htmlFor='3'>Blue</label>
-            <input type='radio' value='blue' id='3' name='color' onChange={this.handleChange} />
+            <Input type='radio' name='color' change={this.handleChange} value='blue' id='3' />
           </div>
-          <button onClick={() => onBack()}>Prev</button>
-          <button type='submit' disabled={!this.state.color} className={!this.state.color ? 'disabled' : ''}>Preview</button>
+          <Button
+            text='Prev'
+            type='submit'
+            click={() => onBack()}
+          />
+          <Button
+            className={!this.state.color ? 'disabled' : ''}
+            text='Preview'
+            type='submit'
+            disabled={!this.state.color}
+          />
         </form>
       </div>
     )

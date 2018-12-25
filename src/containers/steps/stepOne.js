@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import Button from '../../common/forms/Button/index'
+import Input from '../../common/forms/Input/index'
 class stepOne extends Component {
 
   componentWillMount() {
@@ -40,9 +41,14 @@ class stepOne extends Component {
 
           }}>
           <div className='form-group'>
-            <input type="text" placeholder="Your age" name="age" onChange={this.handleChange} value={this.state.age} />
+            <Input type='text' placeholder='Your age' name='age' change={this.handleChange} value={this.state.age} />
           </div>
-          <button type='submit' disabled={!this.state.age} className={!this.state.age ? 'disabled' : ''}>Next</button>
+          <Button
+            className={!this.state.age ? 'disabled' : ''}
+            text='Next'
+            type='submit'
+            disabled={!this.state.age}
+          />
         </form>
       </div>
     )
